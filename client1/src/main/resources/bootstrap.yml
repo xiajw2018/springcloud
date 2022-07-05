@@ -1,0 +1,12 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: prod
+  application:
+    name: client1
+  cloud:
+    config:
+      uri: http://localhost:8081/
+
+
