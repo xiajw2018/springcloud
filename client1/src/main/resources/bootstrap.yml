@@ -8,5 +8,15 @@ spring:
   cloud:
     config:
       uri: http://localhost:8081/
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.92.132:9092
+# 其余配置都在github
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health
 
 

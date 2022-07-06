@@ -2,14 +2,28 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/xiajw2018/springcloudconfig.git
-          default-label: main
+        #git:
+          #uri: https://github.com/xiajw2018/springcloudconfig.git github太卡经常拉取失败，改用本地化文件配置
+          #default-label: main
+        native: # 本地配置
+          search-locations: file:C:/Users/Xiajw/AppData/Local/Temp/config-repo-4692231714057572892
+        bootstrap: true
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.92.132:9092
   application:
     name: config-server
+  profiles:
+    active: native # 开启本地配置
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka
 server:
   port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' # 暴露所有端点。/actuator查看支持的所有命令
