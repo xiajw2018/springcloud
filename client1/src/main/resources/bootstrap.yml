@@ -7,10 +7,13 @@ spring:
     name: client1
   cloud:
     config:
-      #uri: http://localhost:8081/
+      #uri: http://user:secret@localhost:8081/
       discovery:
         enabled: true
         service-id: config-server
+      fail-fast: true #配置客户端快速失败
+      #username: xiajw
+      #password: password
 eureka:
   client:
     service-url:
