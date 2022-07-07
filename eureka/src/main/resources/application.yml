@@ -3,11 +3,11 @@ spring:
     name: eureka
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true #注册自己
+    fetch-registry: false #是否从eureka server获取注册信息
     service-url:
-      defaultZone: http://eureka-server:8080/eureka/
+      defaultZone: http://localhost:8080/eureka/
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
