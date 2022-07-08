@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="client1" />
         <module name="configserver" />
-        <module name="eureka" />
-        <module name="client2" />
         <module name="springcloud" />
+        <module name="client2" />
+        <module name="eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
