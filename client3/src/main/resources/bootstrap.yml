@@ -1,0 +1,17 @@
+server:
+  port: 8084
+spring:
+  profiles:
+    active: prod
+  application:
+    name: client3
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      fail-fast: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka

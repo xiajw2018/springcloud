@@ -4,7 +4,7 @@ spring:
   profiles:
     active: prod
   application:
-    name: client2
+    name: client1
   cloud:
     config:
       #uri: http://user:secret@localhost:8081/
