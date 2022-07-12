@@ -1,0 +1,19 @@
+server:
+  port: 8085
+spring:
+  profiles:
+    active: prod
+  application:
+    name: zuulserver
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+  main:
+    allow-circular-references: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
