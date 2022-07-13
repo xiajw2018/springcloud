@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: client4
+  profiles:
+    active: prod
+  cloud:
+    consul:
+      host: 192.168.92.132
+      port: 8500
+      config:
+        enabled: true
+        format: yaml
+server:
+  port: 8080
