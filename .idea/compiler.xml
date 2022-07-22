@@ -8,12 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="client2" />
         <module name="zuul" />
-        <module name="client1" />
+        <module name="client3" />
+        <module name="gateway" />
         <module name="eureka" />
         <module name="springcloud" />
         <module name="configserver" />
         <module name="client4" />
-        <module name="client3" />
+        <module name="client1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
       <module name="configserver" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="zuul" options="-parameters" />
     </option>
   </component>
