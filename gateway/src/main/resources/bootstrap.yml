@@ -8,7 +8,8 @@ spring:
       host: 192.168.92.132
       port: 8500
       config:
-        enabled: false
+        enabled: true
+        format: yaml
     gateway:
       routes:
         - id: client4
@@ -16,7 +17,21 @@ spring:
           predicates:
             - Path=/client4/**
           filters:
-            - StripPrefix=1
+            - delPrefix=1 #自定义过滤器com.example.gateway.DelPrefixFilter
+            - name: Hystrix
+              args:
+                name: client4fallback
+                fallbackUri: forward:/myhystrix
+        - id: client4-fallback
+          uri: lb://gateway
+          predicates:
+            - Path=/myhystrix
+          filters:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
 server:
   port: 8088
 management:

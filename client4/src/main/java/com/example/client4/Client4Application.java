@@ -41,6 +41,16 @@ public class Client4Application {
         return String.format("author name : %s \n,birth: %d",name,birth);
     }
 
+    @GetMapping("/sleep/{millis}")
+    public String testSleep(@PathVariable("millis")Long millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "sleep finished!";
+    }
+
     @GetMapping("/hystrix/{name}")
     @HystrixCommand(fallbackMethod = "myHystrix")
     public String testHystrix(@PathVariable("name")String name)throws Exception{
