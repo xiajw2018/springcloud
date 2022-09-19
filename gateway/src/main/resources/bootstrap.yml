@@ -12,17 +12,17 @@ spring:
         format: yaml
     gateway:
       routes:
-        - id: client4
-          uri: lb://client4
+        - id: client5
+          uri: lb://client5
           predicates:
-            - Path=/client4/**
+            - Path=/client5/**
           filters:
             - delPrefix=1 #自定义过滤器com.example.gateway.DelPrefixFilter
             - name: Hystrix
               args:
                 name: client4fallback
                 fallbackUri: forward:/myhystrix
-        - id: client4-fallback
+        - id: client5-fallback
           uri: lb://gateway
           predicates:
             - Path=/myhystrix

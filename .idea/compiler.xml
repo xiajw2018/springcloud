@@ -13,12 +13,14 @@
         <module name="eureka" />
         <module name="springcloud" />
         <module name="configserver" />
+        <module name="client5" />
         <module name="client4" />
         <module name="client1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eurekaserver" target="1.8" />
+      <module name="function" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -27,9 +29,11 @@
       <module name="client2" options="-parameters" />
       <module name="client3" options="-parameters" />
       <module name="client4" options="-parameters" />
+      <module name="client5" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="function" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="zuul" options="-parameters" />
     </option>
